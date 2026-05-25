@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <title>Contact - Blogs by Dagem</title>
+</head>
+<body>
+  <%- include("partials/header.ejs") %>
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="text-center mb-5">
+          <h1 class="display-4 mb-3">Get in Touch</h1>
+          <p class="lead text-muted">Have a question or want to collaborate? I'd love to hear from you!</p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <h3>Contact Information</h3>
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-envelope-fill text-primary me-3" style="font-size: 1.5rem;"></i>
+                  <div>
+                    <strong>Email</strong><br>
+                    <a href="mailto:dagemkony14@gmail.com" class="text-decoration-none">dagemkony14@gmail.com</a>
+                  </div>
+                </div>
+                
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-linkedin text-primary me-3" style="font-size: 1.5rem;"></i>
+                  <div>
+                    <strong>LinkedIn</strong><br>
+                    <a href="https://www.linkedin.com/in/dagem-adamte-74ab39164" class="text-decoration-none" target="_blank">Dagems LinkedIn</a>
+                  </div>
+                </div>
+                
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-github text-primary me-3" style="font-size: 1.5rem;"></i>
+                  <div>
+                    <strong>GitHub</strong><br>
+                    <a href="#" class="text-decoration-none">github.com/dagem</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <h3>Send a Message</h3>
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name *</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+              </div>
+              
+              <div class="mb-3">
+                <label for="email" class="form-label">Email *</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+              
+              <div class="mb-3">
+                <label for="message" class="form-label">Message *</label>
+                <textarea class="form-control" id="message" name="message" rows="5" required placeholder="Tell me what's on your mind..."></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include("partials/footer.ejs") %>
+</body>
+</html>

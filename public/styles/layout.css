@@ -1,0 +1,79 @@
+body {
+  background: linear-gradient(135deg, #fdf6e3 0%, #f5e6d3 100%);
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar-logo {
+    font-size: 40px;
+    font-family: "UnifrakturMaguntia", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 150px;
+    margin-top: 20px;
+    padding: 15px;
+    color: #ffffff;
+  }
+  .navbar-mainbg {
+    background: linear-gradient(135deg, #8b2635 0%, #5d1f2b 100%);
+    padding: 0px;
+    box-shadow: 0 4px 20px rgba(139, 38, 53, 0.3);
+  }
+ .navbarContent{
+    margin-top: 12px;
+    margin-right: 150px;
+    overflow: hidden;
+  }
+  .navbarContent ul {
+    padding: 0px;
+    margin: 0px;
+  }
+  .navbarContent ul li a i {
+    margin-right: 10px;
+  }
+  .navbarContent li {
+    list-style-type: none;
+  }
+  .navbarContent ul li a {
+    color: #ffffff;
+    font-size: 16px;
+    display: block;
+    padding: 20px 20px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .navbarContent ul li a:hover {
+    color: #d4af37;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  @media (min-width: 992px) {
+    .navbar-expand-custom {
+      -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+    }
+    .navbar-expand-custom .navbar-nav {
+      -ms-flex-direction: row;
+      flex-direction: row;
+    }
+    .navbar-expand-custom .navbar-toggler {
+      display: none;
+    }
+    .navbar-expand-custom .navbar-collapse {
+      display: -ms-flexbox !important;
+      display: flex !important;
+      -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .navbarContent ul li a {
+      padding: 12px 30px;
+    }
+  }
+  

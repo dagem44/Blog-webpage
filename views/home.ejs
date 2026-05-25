@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <title>Document</title>
+</head>
+<body>
+  <%- include("partials/header.ejs") %>
+
+  <div class="container py-5">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      
+      <div class="col">
+        <div class="card add-post-card text-center d-flex align-items-center justify-content-center" onclick="location.href='/new-post'">
+          <div>
+            <div class="plus-icon">+</div>
+            <p class="mt-2">Make New Post</p>
+          </div>
+        </div>
+      </div>
+
+      <% posts.forEach(function(post) { %>
+        <div class="col">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <h3 class="mb-0">
+                <a href="/post/<%= post.id %>" class="text-decoration-none text-dark">
+                  <%= post.title %>
+                </a>
+              </h3>
+              <div class="mb-1 text-body-secondary"><%= getRelativeTime(post.timestamp) %></div>
+              <p class="card-text mb-auto"><%= post.content %></p>
+              <a href="/post/<%= post.id %>" class="icon-link gap-1 icon-link-hover stretched-link">Continue reading</a>
+            </div>
+            <% if (post.image) { %>
+              <div class="col-auto d-none d-lg-block">
+                <img src="/uploads/<%= post.image %>" class="bd-img" style="width:200px; height:100%; object-fit:cover;" alt="post image">
+              </div>
+            <% } %>
+          </div>
+        </div>
+      <% }); %>
+
+      <div class="col">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-0">
+              <a href="/post/0" class="text-decoration-none text-dark">
+                Kickboxing robot shows off its moves at AI conference
+              </a>
+            </h3>
+            <div class="mb-1 text-body-secondary">Jun 23</div>
+            <p class="card-text mb-auto">Kickboxing robot shows off its moves at AI conference</p>
+            <a href="/post/0" class="icon-link gap-1 icon-link-hover stretched-link">Continue reading</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="/images/boxer.webp" class="bd-img" style="width:200px; height:100%; object-fit:cover;" alt="boxing robot">
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-0">
+              <a href="/post/1" class="text-decoration-none text-dark">
+                Can we stop big tech from controlling the internet with AI agents?
+              </a>
+            </h3>
+            <div class="mb-1 text-body-secondary">Jun 23</div>
+            <p class="card-text mb-auto">Can we stop big tech from controlling the internet with AI agents?</p>
+            <a href="/post/1" class="icon-link gap-1 icon-link-hover stretched-link">Continue reading</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="/images/control.webp" class="bd-img" style="width:200px; height:100%; object-fit:cover;" alt="boxing robot">
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-0">
+              <a href="/post/2" class="text-decoration-none text-dark">
+                Disney and Universal lawsuit may be killing blow in AI copyright wars
+              </a>
+            </h3>
+            <div class="mb-1 text-body-secondary">Jun 23</div>
+            <p class="card-text mb-auto">Disney and Universal lawsuit may be killing blow in AI copyright wars</p>
+            <a href="/post/2" class="icon-link gap-1 icon-link-hover stretched-link">Continue reading</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="/images/disney.webp" class="bd-img" style="width:200px; height:100%; object-fit:cover;" alt="boxing robot">
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-0">
+              <a href="/post/3" class="text-decoration-none text-dark">
+                Sci-fi debut is a quietly brilliant look at a disturbing future
+              </a>
+            </h3>
+            <div class="mb-1 text-body-secondary">Jun 23</div>
+            <p class="card-text mb-auto">Sci-fi debut is a quietly brilliant look at a disturbing future</p>
+            <a href="/post/3" class="icon-link gap-1 icon-link-hover stretched-link">Continue reading</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="/images/scifi.webp" class="bd-img" style="width:200px; height:100%; object-fit:cover;" alt="boxing robot">
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-0">
+              <a href="/post/4" class="text-decoration-none text-dark">
+                Is superintelligent AI just around the corner, or just a sci-fi dream?
+              </a>
+            </h3>
+            <div class="mb-1 text-body-secondary">Jun 23</div>
+            <p class="card-text mb-auto">Is superintelligent AI just around the corner, or just a sci-fi dream?</p>
+            <a href="/post/4" class="icon-link gap-1 icon-link-hover stretched-link">Continue reading</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="/images/super.webp" class="bd-img" style="width:200px; height:100%; object-fit:cover;" alt="boxing robot">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <%- include("partials/footer.ejs") %>
+</body>
+</html>
